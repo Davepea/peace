@@ -17,7 +17,7 @@ const header = () => {
         </div>
         
         </nav>
-        <div className=" fixed  right-0 top-[40%]">
+        <div className=" fixed  right-0 top-[43%]">
             <ul className=" bg-[#665191] text-white p-4 py-6 flex flex-col gap-6 ">
             <Link href='#'>
                 <FaInstagram />
