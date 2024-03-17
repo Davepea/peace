@@ -21,6 +21,7 @@ module.exports = {
       },
       fontFamily: {
         'satoshi': ['Satoshi', 'sans-serif'],
+        'chillax': ['Chillax', 'sans-serif'],
       }
     },
   },

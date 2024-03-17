@@ -5,9 +5,9 @@ import { FaXTwitter,FaInstagram, FaLinkedinIn  } from "react-icons/fa6";
 const header = () => {
   return (
     <div>
-        <nav className=" justify-between p-6 px-20 items-center md:flex  xs:hidden">
-        <h1 className=" font-satoshi">PeaceDavid.</h1>
-        <ul className=" border py-4 px-10 rounded-[30px] flex gap-8 bg-[#ffffff18] backdrop-blur-md">
+        <nav className=" justify-between p-6 md:px-10 items-center flex   ">
+        <h1 className=" font-chillax">PEACEDAVID.</h1>
+        <ul className="border border-1 border-[#ffffff5d] py-3 px-10 rounded-[30px] flex gap-8 bg-[#ffffff18] backdrop-blur-md md:flex xs:hidden">
             <Link href='#'>Home</Link>
             <Link href='#'>About</Link>
             <Link href='#'>Work</Link>
@@ -36,7 +36,12 @@ const header = () => {
 
             </ul>
         </div>
-
+    {/* <div className=' fixed top-0 right-0 left-0 bottom-0 backdrop-blur-lg grid place-items-center'>
+        <p className='text-center p-8'>
+            Site under contruction🤗___ check out my X page to know more about me <br/> 
+            <Link href="/" className=' text-blue-600'>twitter</Link>
+        </p>
+    </div> */}
     </div>
   )
 }
