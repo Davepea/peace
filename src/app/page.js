@@ -1,11 +1,6 @@
 "use client"
 import Image from "next/image";
 import { gsap } from "gsap";
-
-    
-
-import Link from 'next/link';
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -14,6 +9,8 @@ import { EaselPlugin } from "gsap/EaselPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import { useGSAP } from "@gsap/react";
 import { useRef,useEffect } from "react";
+import Link from 'next/link';
+
 
 
 gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,TextPlugin);
@@ -26,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,
 
 
 export default function Home() {
-  
+   const myText = useRef()
    const mymar = useRef()
  
   useGSAP(()=>{
