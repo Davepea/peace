@@ -3,16 +3,74 @@
 @tailwind utilities;
 
 @layer components{
- body{
-    background:#121212 ;
-    color: #fff;
+    body{
+        background:#121212 ;
+        /* background: #110d18; */
+        /* background: #EEEEEE; */
+        color: #EEEEEE;
+        /* color: #121212; */
+        scroll-behavior: smooth;
     
 
+    }
+    footer{
+        position: relative;
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    body::-webkit-scrollbar{
+        display: none;
+    
+    }
+    
+}
+@layer utilities{
+    .marquee{
+        
+        
+        font-size: 40px;
+        font-weight: 600;
+        text-transform: capitalize;
+        overflow: hidden;
+        padding: 1.5rem 0px;
+        width: 110%;
+        
+        position: relative;
+        left: -20px;
+      
+      }
+     
+     
+      
+     
+      .marquee_inner{
+        display: flex;
+        width: fit-content;
+        flex: auto;
+        flex-direction: row;
+      }
+      
+      .marque_parts{
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0 4px;
+      }
+      .marque_parts2{
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0 4px;
+      }
+      .main{
+        position: relative;
+        margin-top: 50vh;
+      }
 }
 
-}
 
-body::-webkit-scrollbar{
-    display: none;
-
-}
+  

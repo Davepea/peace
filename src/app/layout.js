@@ -1,10 +1,12 @@
-import { Inter } from "next/font/google";
+import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 // import Head from 'next/head';
 // import Head from "next/head"
 
 const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -17,14 +19,19 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=bebas-neue@400&f[]=chillax@1,600,500,300,700,400,200&display=swap" rel="stylesheet"/>
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=bebas-neue@400&f[]=chillax@1,600,500,300,700,400,200&f[]=clash-display@200,400,700,500,600,1,300&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
       </head>
 
 
 
-      <body className="">
+      <body className={archivo.className}>
         <Header/>
         {children}
+        <Footer/>
         </body>
     </html>
   );

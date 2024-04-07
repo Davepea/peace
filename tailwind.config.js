@@ -11,7 +11,7 @@ module.exports = {
       sm: "640px",
       md: "768px",
       xl: "1280px",
-      ["2xl"]: "1530px"
+      ["2xl"]: "1530px" 
     },
     extend: {
       backgroundImage: {
@@ -22,6 +22,8 @@ module.exports = {
       fontFamily: {
         'satoshi': ['Satoshi', 'sans-serif'],
         'chillax': ['Chillax', 'sans-serif'],
+        'clashDisplay': ['Clash Display', 'sans-serif'],
+        'Archivo': ['Archivo', 'sans-serif'],
       }
     },
   },
