@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { gsap } from "gsap";
-import { SplitText }  from "gsap-trial/SplitText"
+
     
 
 import Link from 'next/link';
@@ -16,7 +16,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef,useEffect } from "react";
 
 
-gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,TextPlugin,SplitText);
+gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,TextPlugin);
 
 
 
@@ -26,33 +26,9 @@ gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,
 
 
 export default function Home() {
-   const myText = useRef()
-   const mymar = useRef()
-
-  //  useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     gsap.registerPlugin(SplitText); // Register SplitText only in the client-side
-  //     let mySplitText = new SplitText(myText.current, { type: 'chars' });
-  //     let chars = mySplitText.chars
-  //   }
-  // }, []);
-
-  useGSAP(() => {
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(SplitText); // Register SplitText only in the client-side
-      let mySplitText = new SplitText(myText.current, { type: 'chars' });
-      let chars = mySplitText.chars
-      gsap.to(chars, {duration:1,opacity:1, stagger:0.1})
-
-    }
-    
-    
-
-    
-
   
-    
-  }, { scope: myText });
+   const mymar = useRef()
+ 
   useGSAP(()=>{
     var tl = gsap.timeline();
   
