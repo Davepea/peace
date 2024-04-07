@@ -8,8 +8,12 @@ import { Draggable } from "gsap/Draggable";
 import { EaselPlugin } from "gsap/EaselPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import { useGSAP } from "@gsap/react";
-import { useRef,useEffect } from "react";
 import Link from 'next/link';
+import { projects } from '@/data';
+import Card from '@/components/Card/index.jsx';
+import { useScroll } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import Lenis from '@studio-freight/lenis'
 
 
 
@@ -25,6 +29,24 @@ gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,
 export default function Home() {
    const myText = useRef()
    const mymar = useRef()
+
+   const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  })
+
+  useEffect( () => {
+    const lenis = new Lenis()
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  })
  
   useGSAP(()=>{
     var tl = gsap.timeline();
@@ -51,8 +73,8 @@ export default function Home() {
             <div className="md:col-span-9 flex  items-end justify-center">
               <div className="md:text-start xs:text-center flex flex-col md:gap-10 xs:gap-6">
                
-                <h1 className="xl:text-9xl md:text-7xl xs:text-5xl font-Archivo font-black  ">CREATIVE DEVELOPER</h1>
-                <p className=" md:text-[1.7rem] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">I&apos;m helping startups and business owners to make a visual statement through spotless Web Design and Development so they can increase brand awareness and sell more.</p>
+                <h1 className="xl:text-9xl md:text-7xl xs:text-5xl font-Archivo font-thin  ">CREATIVE DEVELOPER</h1>
+                <p className=" md:text-[1.5rem] md:max-w-[800px] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">I&apos;m helping startups and business owners to make a visual statement through spotless Web Design and Development so they can increase brand awareness and sell more.</p>
                 <div>
                 <button className=" border border-[#eeeeee] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem] tracking-wide">Drop me a line</button>
                 </div>
@@ -80,7 +102,7 @@ export default function Home() {
               <p className=" font-clashDisplay font-light md:text-[1.8rem] xs:text-[1.2rem] py-10  col-span-3 tracking-wide " ref={myText} >Hey there,  I&apos;m Peace David  a passionate front-end developer capable of fullstack (nodejs/expessjs,nextjs) with 3 years of experience, coupled with a strong affinity for design. I specialize in crafting innovative digital experiences, products, solutions, and crafting compeling narratives. My love for creativity sets me apart, driving me to constantly seek new approaches and push boundaries. </p>
             </div>
         </section>
-        <section className="md:px-10 xs:px-4  pb-[16rem]  max-w-[1500px] m-auto ">
+        <section className=" md:px-10 xs:px-4  pb-[16rem]  max-w-[1500px] m-auto ">
           <h1 className=" font-Archivo md:text-5xl font-light pb-14">How I can help you...</h1>
           <div className="flex flex-wrap justify-between gap-4">
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
@@ -109,67 +131,26 @@ export default function Home() {
         
         <section className=" md:px-10 xs:px-4 pb-[16rem] max-w-[1500px] m-auto ">
             <div className=" ">
-            <h1 className=" font-Archivo md:text-5xl  pb-14  font-light" >SELECTED WORK</h1>
+            <h1 className=" font-Archivo md:text-5xl   font-light" >SELECTED WORK</h1>
             {/* <h1 className=" font-clashDisplay font-bold xl:text-9xl md:text-7xl xs:text-4xl">SELECTED </h1>
             <h1 className=" font-clashDisplay font-bold xl:text-9xl md:text-7xl xs:text-4xl flex justify-end">WORK</h1> */}
 
             </div>
             
-            <div className=" grid md:grid-cols-8  border-b py-20 border-[#eeeeee17]">
-            {/* border-[#12121257]  */}
-              <div className=" md:col-span-2">
-                <p className=" md:text-4xl">01</p>
-              </div>
-              <div className="md:col-span-5">
-                <h1 className=" xl:text-7xl font-Archivo font-black">PEACE ADEBAYO</h1>
-                <p className="tracking-wider font-clashDisplay">web development, web design</p>
-              </div>
-              <div className="flex justify-end">
-                <h1 className=" md:text-4xl">2024</h1>
-              </div>
-            </div>
-            <div className=" grid md:grid-cols-8  py-20 border-b border-[#eeeeee17]">
-              <div className=" md:col-span-2">
-                <p className=" md:text-4xl">02</p>
-              </div>
-              <div className="md:col-span-5">
-                <h1 className=" xl:text-7xl font-Archivo font-black">SUNMENCE</h1>
-                <p className="tracking-wider font-clashDisplay">web development, web design</p>
-              </div>
-              <div className="flex justify-end">
-                <h1 className=" md:text-4xl">2023</h1>
-              </div>
-            </div>
-            <div className=" grid md:grid-cols-8  border-b  py-20 border-[#eeeeee17]">
-              <div className=" md:col-span-2">
-                <p className=" md:text-4xl">03</p>
-              </div>
-              <div className="md:col-span-5">
-                <h1 className=" xl:text-7xl font-Archivo font-black"> AL-HOR</h1>
-                <p className="tracking-wider font-clashDisplay">web development, web design</p>
-              </div>
-              <div className="flex justify-end">
-                <h1 className=" md:text-4xl">2024</h1>
-              </div>
-            </div>
-            <div className=" grid md:grid-cols-8  border-b  py-20 border-[#eeeeee17]">
-              <div className=" md:col-span-2">
-                <p className=" md:text-4xl">01</p>
-              </div>
-              <div className="md:col-span-5">
-                <h1 className=" xl:text-7xl font-Archivo font-black">PEACE ADEBAYO</h1>
-                <p className="tracking-wider font-clashDisplay">web development, web design</p>
-              </div>
-              <div className="flex justify-end">
-                <h1 className=" md:text-4xl">2024</h1>
-              </div>
-            </div>
+            <main ref={container} className="relative mt-[10vh] ">
+              {
+                projects.map( (project, i) => {
+                  const targetScale = 1 - ( (projects.length - i) * 0.05);
+                  return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale}/>
+                })
+              }
+            </main>
            
           
           
             
         </section>
-        <section className="mymar" ref={mymar}>
+        <section className="mymar max-w-[1500px] m-auto" ref={mymar}>
            <div className="marquee border-2">
               <div className="marquee_inner">
                 <div className="marque_parts">

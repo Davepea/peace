@@ -1,5 +1,5 @@
 'use client';
-import styles from './page.module.scss'
+
 import { projects } from '@/data';
 import Card from '@/components/Card/index.jsx';
 import { useScroll } from 'framer-motion';
@@ -25,7 +25,7 @@ export default function Home() {
   })
 
   return (
-    <main ref={container} className={styles.main}>
+    <main ref={container} className="md:px-10 xs:px-4 relative mt-[50vh] pb-[16rem]">
       {
         projects.map( (project, i) => {
           const targetScale = 1 - ( (projects.length - i) * 0.05);

@@ -5,14 +5,14 @@ import { FaXTwitter,FaInstagram, FaLinkedinIn  } from "react-icons/fa6";
 const footer = () => {
   return (
     <>
-    <footer className='md:px-10 xs:px-2  font-clashDisplay flex flex-col h-screen justify-between'>
+    <footer className='md:px-10 xs:px-2  font-clashDisplay flex flex-col h-screen justify-between max-w-[1500px] m-auto'>
         <div></div>
         <div className="   flex flex-col md:items-start xs:items-center md:gap-6  py-24 md:text-start xs:text-center xs:gap-4">
            <div className=' font-Archivo'>
-                <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-black  '>
+                <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-semibold  '>
                     LET&apos;S HAVE 
                 </h1>
-                <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-black grid place-items-end'>
+                <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-thin grid place-items-end'>
                     A CONVERSATION
                 </h1>
             </div>

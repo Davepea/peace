@@ -1,10 +1,10 @@
 'use client'
 import Image from 'next/image';
-import styles from './style.module.scss';
+
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 
-const Card = ({i, title, description, src, url, color, progress, range, targetScale}) => {
+const Card = ({i, title, description, src, color, progress, range, targetScale}) => {
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -14,28 +14,25 @@ const Card = ({i, title, description, src, url, color, progress, range, targetSc
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
   const scale = useTransform(progress, range, [1, targetScale]);
- 
+  // const blur = useTransform(scale, [1, targetScale], [0, 100]);
+  const blur = useTransform(progress, [0, 1], [0, 20]); 
   return (
-    <div ref={container} className={styles.cardContainer}>
+    <div ref={container} className="h-screen flex items-center justify-center sticky top-0 ">
       <motion.div 
-        style={{backgroundColor: color, scale, top:`calc(-5vh + ${i * 25}px)`}} 
-        className={styles.card}
+        style={{backgroundColor: "#efc050", scale, top:`calc(-5vh + ${i * 40}px)`, filter: `blur(${blur}px)` }} 
+        className="flex flex-col relative top-[-45%] h-[90vh] rounded-lg px-[40px] py-6  w-full"
       >
-        <h2>{title}</h2>
-        <div className={styles.body}>
-          <div className={styles.description}>
-            <p>{description}</p>
-            <span>
-              <a href={url} target="_blank">See more</a>
-              <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z" fill="black"/>
-              </svg>
-            </span>
-          </div>
-
-          <div className={styles.imageContainer}>
+        <div className=' flex justify-between items-center'>
+          <div>{title}  2024</div>
+        <div className=' flex list-none justify-end items-center gap-1'>
+          <li className='p-1 px-4 bg-[#1212123b] rounded-full'>UI/UX</li>
+          <li className='p-1 px-4 bg-[#1212123b] rounded-full'>Web Development</li>
+        </div>
+        </div>
+        <h2 className=' absolute grid place-items-center top-0 bottom-0 right-0 left-0 md:text-8xl text-center p-10'>{title}</h2>
+        {/* <div >
             <motion.div
-              className={styles.inner}
+              
               style={{scale: imageScale}}
             >
               <Image
@@ -44,9 +41,8 @@ const Card = ({i, title, description, src, url, color, progress, range, targetSc
                 alt="image" 
               />
             </motion.div>
-          </div>
-
-        </div>
+          </div> */}
+        
       </motion.div>
     </div>
   )

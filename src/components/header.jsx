@@ -7,7 +7,7 @@ const header = () => {
     <div>
         <nav className=" justify-between p-6 md:px-10 items-center flex max-w-[1500px] m-auto   ">
         <h1 className=" font-clashDisplay">PEACEDAVID.</h1>
-        <ul className=" text-sm border-1  py-3 px-10 rounded-[30px] flex gap-8 backdrop-blur-md md:flex xs:hidden font-clashDisplay">
+        <ul className=" text-sm border-1 bg-[#eeeeee13]  py-3 px-10 rounded-[30px] flex gap-8 backdrop-blur-md md:flex xs:hidden font-clashDisplay">
             <Link href='#'>Home</Link>
             <Link href='#'>About</Link>
             <Link href='#'>Work</Link>

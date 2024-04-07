@@ -21,7 +21,7 @@ export const projects = [
     color: "#C2491D"
   },
   {
-    title: "Mathias Svold and Ulrik Hasemann",
+    title: "Mathias Svold ",
     description: "The coastlines of Denmark are documented in tonal colors in a pensive new series by Danish photographers Ulrik Hasemann and Mathias Svold; an ongoing project investigating how humans interact with and disrupt the Danish coast.",
     src: "house.jpg",
     link: "https://www.ignant.com/2019/03/13/a-photographic-series-depicting-the-uncertain-future-of-denmarks-treasured-coastlines/",
