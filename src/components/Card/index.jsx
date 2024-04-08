@@ -20,7 +20,7 @@ const Card = ({i, title, description, src, color, progress, range, targetScale})
     <div ref={container} className="h-screen flex items-center justify-center sticky top-0 ">
       <motion.div 
         style={{backgroundColor: "#efc050", scale, top:`calc(-5vh + ${i * 40}px)`, filter: `blur(${blur}px)` }} 
-        className="flex flex-col relative top-[-45%] h-[90vh] rounded-lg px-[40px] py-6  w-full"
+        className="flex flex-col relative top-[-45%]  md:h-[90vh] xs:h-[50vh] rounded-3xl px-[40px] py-6  w-full"
       >
         <div className=' flex justify-between items-center'>
           <div>{title}  2024</div>

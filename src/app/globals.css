@@ -10,6 +10,9 @@
         /* color: #EEEEEE; */
         color: #121212;
         scroll-behavior: smooth;
+        overflow-x: hidden !important;
+        width: 100%;
+        margin: auto !important;
     
 
     }
@@ -60,16 +63,7 @@
         flex-shrink: 0;
         padding: 0 4px;
       }
-      .marque_parts2{
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-        padding: 0 4px;
-      }
-      .main{
-        position: relative;
-        margin-top: 50vh;
-      }
+      
 }
 
 
