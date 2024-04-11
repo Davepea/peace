@@ -1,6 +1,6 @@
 import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import Footer from "@/components/footer";
 // import Head from 'next/head';
 // import Head from "next/head"

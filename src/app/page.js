@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import { AnimatePresence } from 'framer-motion';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
@@ -12,8 +13,9 @@ import Link from 'next/link';
 import { projects } from '@/data';
 import Card from '@/components/Card/index.jsx';
 import { useScroll } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Lenis from '@studio-freight/lenis'
+import Preloader from '@/components/Preloader'
 
 
 
@@ -31,6 +33,7 @@ export default function Home() {
    const mymar = useRef()
 
    const container = useRef(null);
+   const [isLoading, setIsLoading] = useState(true);
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -47,6 +50,21 @@ export default function Home() {
 
     requestAnimationFrame(raf)
   })
+  useEffect( () => {
+    (
+      async () => {
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+          const locomotiveScroll = new LocomotiveScroll();
+
+          setTimeout( () => {
+            setIsLoading(false);
+            document.body.style.cursor = 'default'
+            window.scrollTo(0,0);
+          }, 2000)
+      }
+    )()
+  }, [])
+
  
   useGSAP(()=>{
     var tl = gsap.timeline();
@@ -67,13 +85,16 @@ export default function Home() {
 
   return ( 
     <>
+      <AnimatePresence mode='wait'>
+          {isLoading && <Preloader />}
+        </AnimatePresence>
       
         <section className="grid md:grid-cols-12  md:px-20 xs:px-4  py-[16rem]  max-w-[1500px] m-auto ">
             
             <div className="md:col-span-9 flex  items-end justify-center">
               <div className="md:text-start xs:text-center flex flex-col md:gap-10 xs:gap-6">
                
-                <h1 className="xl:text-9xl md:text-7xl xs:text-5xl font-Archivo md:font-thin xs:font-bold ">CREATIVE DEVELOPER</h1>
+                <h1 className="xl:text-9xl md:text-7xl xs:text-5xl font-Archivo md:font-normal xs:font-bold ">CREATIVE DEVELOPER</h1>
                 <p className=" md:text-[1.5rem] md:max-w-[800px] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">I&apos;m helping startups and business owners to make a visual statement through spotless Web Design and Development so they can increase brand awareness and sell more.</p>
                 <div>
                 <button className=" border border-[#eeeeee] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem] tracking-wide">Drop me a line</button>
@@ -89,7 +110,14 @@ export default function Home() {
         
         <section className=" pb-[16rem] py-4 grayscale">
             
-            <div>
+            <div className="relative">
+              {/* <div className="absolute right-0 left-0">
+                <h1 className=" md:text-9xl flex justify-between">
+                  <span>PEACE</span>
+                  <span>DAVID</span>
+                   
+                  </h1>
+              </div> */}
               <Image
                 src="/images/profile2.jpg"
                 width={1000}
@@ -103,7 +131,7 @@ export default function Home() {
             </div>
         </section>
         <section className=" md:px-20 xs:px-4  pb-[16rem]  max-w-[1500px] m-auto ">
-          <h1 className=" font-Archivo md:text-5xl font-light pb-14">How I can help you...</h1>
+          <h1 className=" font-Archivo md:text-5xl font-light pb-14">Here is how I can help you...</h1>
           <div className="flex flex-wrap justify-between gap-4">
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
               <h1 className=" font-Archivo font-bold text-3xl flex items-end ">Web Development</h1>

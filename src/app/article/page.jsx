@@ -1,12 +1,18 @@
 "use client"
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from "gsap";
+import Preloader from '@/components/Preloader';
+import { AnimatePresence } from 'framer-motion';
+
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
     const cardContainerRef = useRef();
+    const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
         const cards = gsap.utils.toArray(".box");
@@ -24,31 +30,63 @@ const Page = () => {
             });
         });
     }, []);
+    useEffect( () => {
+        (
+          async () => {
+              const LocomotiveScroll = (await import('locomotive-scroll')).default
+              const locomotiveScroll = new LocomotiveScroll();
+    
+              setTimeout( () => {
+                setIsLoading(false);
+                document.body.style.cursor = 'default'
+                window.scrollTo(0,0);
+              }, 2000)
+          }
+        )()
+      }, [])
+    
 
     return (
         <>
-            <section className='md:px-10 xs:px-4 max-w-[1500px] m-auto'>
-                <div className='h-[400px] bg-gray-300'></div>
-                <div className='grid md:grid-cols-5 font-clashDisplay gap-10 font-light py-14'>
-                    <div className='md:col-span-3 '>
-                        <p className='md:text-[1.2rem]'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum natus ullam tempora ut in debitis ratione, deserunt totam magni id voluptatum veritatis cum omnis, impedit modi repellendus iusto illum. Eos earum quisquam maxime architecto id sint est possimus velit laudantium cum! Aspernatur, dolorem rem veniam quasi quis fugit amet odit.
+        <AnimatePresence mode='wait'>
+            {isLoading && <Preloader />}
+        </AnimatePresence>
+           <section className='md:px-20 pb-[16rem]'>
+             <div className='text-center pb-6'>
+                <h1 className=' font-Archivo font-bold text-3xl  '>The Mystry Of Creative</h1>
+                <small className=''>creators, artist</small>
+             </div>
+             <div>
+                <div className='h-[400px] bg-black'></div>
+             </div>
+             <div className=' grid md:grid-cols-5 pt-6 '>
+                <div className='md:col-span-1'>
+                    <ul>
+                        <li>soccers</li>
+                        <li>soccers</li>
+                        <li>soccers</li>
+                        <li>soccers</li>
+                    </ul>
+                </div>
+                <div className='md:col-span-4'>
+                    <div >
+                        <h2>Introduction</h2>
+                        <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, nobis nesciunt. Libero ea quas rem quisquam velit, sit ad. Unde pariatur voluptates ratione vero, tempora cum consectetur id, impedit, et quasi similique excepturi veniam? Optio laboriosam beatae neque consectetur modi? Aut earum minus molestiae eligendi laborum alias ea enim esse!
+                        </p>
+                        <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, nobis nesciunt. Libero ea quas rem quisquam velit, sit ad. Unde pariatur voluptates ratione vero, tempora cum consectetur id, impedit, et quasi similique excepturi veniam? Optio laboriosam beatae neque consectetur modi? Aut earum minus molestiae eligendi laborum alias ea enim esse!
+                        </p>
+                        <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, nobis nesciunt. Libero ea quas rem quisquam velit, sit ad. Unde pariatur voluptates ratione vero, tempora cum consectetur id, impedit, et quasi similique excepturi veniam? Optio laboriosam beatae neque consectetur modi? Aut earum minus molestiae eligendi laborum alias ea enim esse!
+                        </p>
+                        <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, nobis nesciunt. Libero ea quas rem quisquam velit, sit ad. Unde pariatur voluptates ratione vero, tempora cum consectetur id, impedit, et quasi similique excepturi veniam? Optio laboriosam beatae neque consectetur modi? Aut earum minus molestiae eligendi laborum alias ea enim esse!
                         </p>
                     </div>
-                    <div className=' md:col-span-2'>
-                        <p className='md:text-[1.2rem] '>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum natus ullam tempora ut in debitis ratione, deserunt totam magni id voluptatum veritatis cum omnis, impedit modi repellendus iusto illum</p>
-                    </div>
                 </div>
-            </section>
-            <section className='relative overflow-hidden p-8' ref={cardContainerRef}>
-                <div className='cardContainer h-screen flex flex-col '>
-                    <div className="box bg-[#efc050] relative w-full h-[500px] rounded-lg"></div>
-                    <div className="box bg-[#0505ef] relative w-full h-[500px] rounded-lg"></div>
-                    <div className="box bg-[crimson] relative w-full h-[500px] rounded-lg"></div>
-                    <div className="box bg-[white] relative w-full h-[500px] rounded-lg"></div>
-                    <div className="box bg-[navy] relative w-full h-[500px] rounded-lg"></div>
-                </div>
-            </section>
-            <section className='h-screen'></section>
+             </div>
+           </section>
         </>
     );
 };

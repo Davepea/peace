@@ -27,26 +27,26 @@ const Footer = () => {
       },{scope: mymar2})
   return (
     <>
-    <footer className=' xs:px-2  font-clashDisplay flex flex-col h-screen justify-between max-w-[1500px] m-auto'>
+    <footer className=' xs:px-2  font-clashDisplay flex flex-col h-screen justify-between max-w-[1500px] m-auto '>
         {/* <div></div> */}
         <div className="   flex flex-col md:items-start xs:items-center md:gap-6   md:text-start xs:text-center xs:gap-4">
             <div className=' w-full overflow-hidden' ref={mymar2}>
             <div className="marquee border-t border-[#12121227]">
               <div className="marquee_inner">
                 <div className="marque_parts">
-                  <h1 className='xl:text-9xl md:text-7xl xs:text-4xl font-thin  '>
+                  <h1 className='xl:text-9xl md:text-7xl xs:text-4xl font-normal'>
                     LET&apos;S   HAVE   A   CONVERSATION
                 </h1>
                   →
                 </div>
                 <div className="marque_parts">
-                  <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-thin  '>
+                  <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-normal'>
                     LET&apos;S HAVE A CONVERSATION
                   </h1>
                     →
                 </div>
                 <div className="marque_parts">
-                  <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-thin  '>
+                  <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-normal'>
                     LET&apos;S HAVE A CONVERSATION
                   </h1>
                     →
