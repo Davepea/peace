@@ -20,10 +20,7 @@ const navItems = [
     title: "About",
     href: "/about",
   },
-  {
-    title: "Contact",
-    href: "/contact",
-  },
+  
 ]
 
 export default function Index() {
@@ -42,7 +39,7 @@ export default function Index() {
        <div className={styles.body}>
             <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={styles.nav}>
                     <div className={styles.header}>
-                        <p>Navigation</p>
+                        {/* <p>Navigation</p> */}
                     </div>
                     {
                       navItems.map( (data, index) => {

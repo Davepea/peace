@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer components{
+    *{
+        font-family:'Clash Display', 'sans-serif' ;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     body{
-        background:#121212 ;
+        background:#141516 ;
         /* background: #110d18; */
         /* background: #EEEEEE; */
         color: #EEEEEE;

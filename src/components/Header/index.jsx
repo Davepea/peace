@@ -6,8 +6,8 @@ import { AnimatePresence } from 'framer-motion';
 import Nav from './nav';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Rounded from '../../common/RoundedButton';
-import Magnetic from '../../common/Magnetic';
+import Rounded from '@/common/RoundedButton';
+import Magnetic from '@/common/Magnetic';
 
 export default function Index() {
     const header = useRef(null);
@@ -39,13 +39,13 @@ export default function Index() {
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
                     <p className={styles.codeBy}>Code by</p>
-                    <p className={styles.dennis}>Dennis</p>
-                    <p className={styles.snellenberg}>Snellenberg</p>
+                    <p className={styles.dennis}>PEACE</p>
+                    <p className={styles.snellenberg}>DAVID</p>
                 </div>
             </div>
-            <div className={styles.nav}>
+            <div className="flex items-center">
                 <Magnetic>
-                    <div className={styles.el}>
+                    <div className="flex flex-col relative z-[1]">
                         <a>Work</a>
                         <div className={styles.indicator}></div>
                     </div>

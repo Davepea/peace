@@ -1,37 +1,45 @@
-'use client';
+"use client"
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
-import { projects } from '@/data';
-import Card from '@/components/Card/index.jsx';
-import { useScroll } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import Lenis from '@studio-freight/lenis'
+const InfiniteTextAnimation = () => {
+  const textRefs = useRef([]);
+  const texts = ["Text 1", "Text 2", "Text 3"];
+  let currentIndex = 0;
 
-export default function Home() {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end']
-  })
+  useEffect(() => {
+    const animateText = () => {
+      gsap.to(textRefs.current[currentIndex], {
+        duration: 1, // Duration of animation
+        x: '-100%', // Slide out to the left
+        onComplete: () => {
+          gsap.set(textRefs.current[currentIndex], { x: '100%' }); // Reset position
+          currentIndex = (currentIndex + 1) % texts.length;
+          gsap.to(textRefs.current[currentIndex], {
+            duration: 1, // Duration of animation
+            x: '0%', // Slide in from the right
+            onComplete: animateText // Repeat animation
+          });
+        }
+      });
+    };
 
-  useEffect( () => {
-    const lenis = new Lenis()
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-  })
+    animateText(); // Start the animation
+  }, []); // Run once on component mount
 
   return (
-    <main ref={container} className="md:px-10 xs:px-4 relative mt-[50vh] pb-[16rem]">
-      {
-        projects.map( (project, i) => {
-          const targetScale = 1 - ( (projects.length - i) * 0.05);
-          return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale}/>
-        })
-      }
-    </main>
-  )
-}
+    <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '24px' }}>
+      {texts.map((text, index) => (
+        <div
+          key={index}
+          ref={(el) => (textRefs.current[index] = el)}
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', textAlign: 'center' }}
+        >
+          {text}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default InfiniteTextAnimation;

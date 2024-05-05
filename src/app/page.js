@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { AnimatePresence } from 'framer-motion';
 import { gsap } from "gsap";
+import { TweenLite } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -16,19 +17,22 @@ import { useScroll } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Lenis from '@studio-freight/lenis'
 import Preloader from '@/components/Preloader'
+import Rounded from '@/common/RoundedButton';
+import Magnetic from '@/common/Magnetic';
 
 
 
 gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,EaselPlugin,TextPlugin);
 
 
-
+const words = ["DEVELOPER","DESIGNER", "WRITER"]
 
 
 
 
 
 export default function Home() {
+  const [index, setIndex] = useState(0);
    const myText = useRef()
    const mymar = useRef()
 
@@ -39,6 +43,19 @@ export default function Home() {
     target: container,
     offset: ['start start', 'end end']
   })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex === words.length - 1 ? 0 : prevIndex + 1));
+    }, 2000); // Adjusted interval duration
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useGSAP(() => {
+    TweenLite.to('.word', 0.5, { ease: "bounce.out", opacity: 0, onComplete: () => {
+      TweenLite.to('.word', 0.5, { opacity: 1 });
+    }});
+  }, [index]);
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -65,9 +82,31 @@ export default function Home() {
     )()
   }, [])
 
+  useGSAP(() => {
+    var tl = gsap.timeline();
+    
+    // This part is correct, setting up the animation
+    tl.to("body", {
+      background: "#EEE",
+      duration: 1,
+      ease: "linear",
+    });
+    tl.set("body",{ background: "#141516"})
+  
+    // ScrollTrigger configuration
+    ScrollTrigger.create({
+      trigger: ".thesection",
+      // markers: true,
+      start: 'top bottom',
+     
+    });
+  });
+
  
   useGSAP(()=>{
     var tl = gsap.timeline();
+
+    
   
     tl.to(".marque_parts",{
       repeat: -1,
@@ -77,7 +116,7 @@ export default function Home() {
     })
     .totalProgress(0.5);
     gsap.set(".marquee_inner", {xPercent: -50});
-
+    
   
   },{scope: mymar})
   
@@ -89,26 +128,29 @@ export default function Home() {
           {isLoading && <Preloader />}
         </AnimatePresence>
       
-        <section className="grid md:grid-cols-12  md:px-20 xs:px-4  py-[16rem]  max-w-[1500px] m-auto ">
+        <section className="grid md:grid-cols-12  md:px-20 xs:px-4 pt-[12rem] pb-[16rem]  max-w-[1500px] m-auto ">
             
-            <div className="md:col-span-9 flex  items-end justify-center">
-              <div className="md:text-start xs:text-center flex flex-col md:gap-10 xs:gap-6">
+            <div className="md:col-span-10 flex  items-end  ">
+              <div className="md:text-start  flex flex-col md:gap-10 xs:gap-6 ">
                
-                <h1 className="xl:text-9xl md:text-7xl xs:text-5xl font-Archivo md:font-normal xs:font-bold ">CREATIVE DEVELOPER</h1>
-                <p className=" md:text-[1.5rem] md:max-w-[800px] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">I&apos;m helping startups and business owners to make a visual statement through spotless Web Design and Development so they can increase brand awareness and sell more.</p>
-                <div>
-                <button className=" border border-[#eeeeee] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem] tracking-wide">Drop me a line</button>
+                <div className=" font-thin">
+                  <h1 className="xl:text-9xl md:text-7xl xs:text-5xl  xs:font-bold ">CREATIVE</h1>
+                  <h1 className="xl:text-9xl md:text-7xl xs:text-5xl   xs:font-bold ">DEVELOPER</h1>
                 </div>
+                <p className=" md:text-[1.5rem] md:max-w-[800px] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">I&apos;m helping startups and business owners to make a visual statement through spotless Web Design and Development so they can increase brand awareness and sell more.</p>
+                <Magnetic>
+                <button className=" border border-[#eeeeee] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem]  tracking-wide md:w-[350px]">Drop me a line</button>
+                </Magnetic>
                 {/* <p className=" md:text-[2rem] xs:text-[1.2rem] font-light font-clashDisplay tracking-widest">For Creative Brands</p> */}
               </div>
             </div>
-            <div className="md:col-span-2 pt-36">
+            <div className="md:col-span-2 md:pt-36 flex justify-end ">
               <small>specialized in Web Design, UX / UI, Webflow, and Front End Development.</small>
             </div>
           
         </section>
         
-        <section className=" pb-[16rem] py-4 grayscale">
+        <section className=" pb-[16rem] py-4 grayscale thesection pt-20 bg-[#EEE] text-black">
             
             <div className="relative">
               {/* <div className="absolute right-0 left-0">
@@ -134,19 +176,21 @@ export default function Home() {
           <h1 className=" font-Archivo md:text-5xl font-light pb-14">Here is how I can help you...</h1>
           <div className="flex flex-wrap justify-between gap-4">
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
-              <h1 className=" font-Archivo font-bold text-3xl flex items-end ">Web Development</h1>
+              <h1 className=" font-Archivo font-bold text-2xl flex items-end">WEB DEVELOPMENT</h1>
               <div className=" flex items-end">
               <p className=" font-light font-clashDisplay ">I specialize in building custom web applications from scratch using JavaScript frameworks like ReactJS</p>
               </div>
             </div>
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
-              <h1 className=" font-Archivo font-bold text-3xl flex items-end ">Web Development</h1>
+              <h1 className=" font-Archivo font-bold text-2xl flex items-end">WEB DEVELOPMENT</h1>
+
               <div className=" flex items-end">
               <p className=" font-light font-clashDisplay ">I specialize in building custom web applications from scratch using JavaScript frameworks like ReactJS</p>
               </div>
             </div>
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
-              <h1 className=" font-Archivo font-bold text-3xl flex items-end ">Web Development</h1>
+              <h1 className=" font-Archivo font-bold text-2xl flex items-end">WEB DEVELOPMENT</h1>
+
               <div className=" flex items-end">
               <p className=" font-light font-clashDisplay ">I specialize in building custom web applications from scratch using JavaScript frameworks like ReactJS</p>
               </div>
@@ -157,8 +201,8 @@ export default function Home() {
           </div>
         </section>
         
-        <section className=" md:px-20 xs:px-4 pb-[16rem] max-w-[1500px] m-auto ">
-            <div className=" ">
+        <section className=" md:px-10 xs:px-4 pb-[16rem] max-w-[1500px] m-auto ">
+            <div className="md:px-10 xs:px-0 ">
             <h1 className=" font-Archivo md:text-5xl   font-light" >SELECTED WORK</h1>
             {/* <h1 className=" font-clashDisplay font-bold xl:text-9xl md:text-7xl xs:text-4xl">SELECTED </h1>
             <h1 className=" font-clashDisplay font-bold xl:text-9xl md:text-7xl xs:text-4xl flex justify-end">WORK</h1> */}
@@ -192,14 +236,19 @@ export default function Home() {
                 <p>13 May 2024</p>
                 
               </div>
-              <div className="  md:col-span-4">
-                <small className=" pb-2">Article</small>
+              <div className="  md:col-span-4 flex flex-col gap-6">
+                <div>
+                 <small className="">ARTICLE</small>
+
+                </div>
+                <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay pb-6">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>UI/UX</li>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>Web Development</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>UI/UX</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>Web Development</li>
                 </div>
 
                 </div>
@@ -216,14 +265,19 @@ export default function Home() {
                 <p>13 May 2024</p>
                 
               </div>
-              <div className="  md:col-span-4">
-                <small className=" pb-2">Article</small>
+              <div className="  md:col-span-4 flex flex-col gap-6">
+                <div>
+                 <small className="">ARTICLE</small>
+
+                </div>
+                <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay pb-6">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>UI/UX</li>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>Web Development</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>UI/UX</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>Web Development</li>
                 </div>
 
                 </div>
@@ -240,14 +294,19 @@ export default function Home() {
                 <p>13 May 2024</p>
                 
               </div>
-              <div className="  md:col-span-4">
-                <small className=" pb-2">Article</small>
+              <div className="  md:col-span-4 flex flex-col gap-6">
+                <div>
+                 <small className="">ARTICLE</small>
+
+                </div>
+                <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay pb-6">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>UI/UX</li>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>Web Development</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>UI/UX</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>Web Development</li>
                 </div>
 
                 </div>
@@ -264,14 +323,19 @@ export default function Home() {
                 <p>13 May 2024</p>
                 
               </div>
-              <div className="  md:col-span-4">
-                <small className=" pb-2">Article</small>
+              <div className="  md:col-span-4 flex flex-col gap-6">
+                <div>
+                 <small className="">ARTICLE</small>
+
+                </div>
+                <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay pb-6">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+                </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>UI/UX</li>
-                  <li className='p-1 px-4 border border-[#12121257] rounded-full'>Web Development</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>UI/UX</li>
+                  <li className='p-1 px-4 border border-[#EEEEEE] rounded-full'>Web Development</li>
                 </div>
 
                 </div>
@@ -283,6 +347,7 @@ export default function Home() {
 
               </div>
             </div>
+            
             
           </div>
         </section>

@@ -34,22 +34,35 @@ const Footer = () => {
             <div className="marquee border-t border-[#12121227]">
               <div className="marquee_inner">
                 <div className="marque_parts">
-                  <h1 className='xl:text-9xl md:text-7xl xs:text-4xl font-normal'>
+                  <h1 className='xl:text-[10rem] md:text-7xl xs:text-4xl '>
                     LET&apos;S   HAVE   A   CONVERSATION
                 </h1>
-                  →
+                <div className='px-24'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:w-36 md:h-28">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+                </div>
+
                 </div>
                 <div className="marque_parts">
-                  <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-normal'>
-                    LET&apos;S HAVE A CONVERSATION
+                  <h1 className='xl:text-[10rem] md:text-7xl xs:text-4xl '>
+                    LET&apos;S  HAVE  A  CONVERSATION
                   </h1>
-                    →
+                  <div className='px-24'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:w-36 md:h-28">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+                </div>
                 </div>
                 <div className="marque_parts">
-                  <h1 className=' xl:text-9xl md:text-7xl xs:text-4xl font-normal'>
-                    LET&apos;S HAVE A CONVERSATION
+                  <h1 className=' xl:text-[10rem] md:text-7xl xs:text-4xl '>
+                    LET&apos;S  HAVE  A  CONVERSATION
                   </h1>
-                    →
+                  <div className='px-24' >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:w-36 md:h-28">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+                </div>
                 </div>
                 
                 
@@ -58,19 +71,18 @@ const Footer = () => {
             </div>
       
       
-            <div className="container  font-clashDisplay md:px-20 pt-10 ">
+            <div className="container  font-clashDisplay md:px-20 pt-4 ">
                 <div className=''>
                    
-                    <p className=' md:text-[1rem] '>
-                        i am open to full time opportunities, collaboration and even bring your big imagination to life
-                        i am open to full time opportunities, collaboration and even bring your big imagination to life
-                        i am open to full time opportunities, collaboration and even bring your big imagination to life
-                        i am open to full time opportunities, collaboration and even bring your big imagination to life
+                    <p className=' md:text-[1.5rem] font-thin'>
+                        i am open to full time opportunities, collaboration and even bring your big imagination to life.
+                        Just one step away to connecting with me
+                        
                     </p>
                 </div>
                 <div className=''>
-                    <div className='pt-6'>
-                        <button className='border border-[#0e0d0d] px-6 py-2 rounded-full font-clashDisplay text-[1.5rem] tracking-wide'>SEND ME AN EMAIL</button>
+                    <div className='pt-14'>
+                        <button className='border border-[#EEE] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem] tracking-wide md:w-[350px]'>Send me an EMAIL</button>
                         <div className='md:hidden xs:block'>
                             <div>DEV.PEACEDAVE@GMAIL.COM
                                 
@@ -89,15 +101,15 @@ const Footer = () => {
 
             </div>
             <div className=' md:col-span-3'>
-                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#1212123d] py-2">
+                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2">
                     <span>+234 810 299 6646</span>
                     <span>@ dev.peacedave@gmail.com</span>
                 </li>
-                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#1212123d] py-2">
+                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2">
                     <span>+234 810 299 6646</span>
                     <span>@ dev.peacedave@gmail.com</span>
                 </li>
-                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#1212123d] py-2">
+                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2">
                     <span>+234 810 299 6646</span>
                     <span>@ dev.peacedave@gmail.com</span>
                 </li>
