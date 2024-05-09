@@ -131,21 +131,21 @@ export default function Home() {
         <section className="grid md:grid-cols-12  md:px-20 xs:px-4 pt-[12rem] pb-[16rem]  max-w-[1500px] m-auto ">
             
             <div className="md:col-span-10 flex  items-end  ">
-              <div className="md:text-start  flex flex-col md:gap-10 xs:gap-6 ">
+              <div className="md:text-start  flex flex-col md:gap-8 xs:gap-6 ">
                
                 <div className=" font-thin">
                   <h1 className="xl:text-9xl md:text-7xl xs:text-5xl  xs:font-bold ">CREATIVE</h1>
                   <h1 className="xl:text-9xl md:text-7xl xs:text-5xl   xs:font-bold ">DEVELOPER</h1>
                 </div>
-                <p className=" md:text-[1.5rem] md:max-w-[800px] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">I&apos;m helping startups and business owners to make a visual statement through spotless Web Design and Development so they can increase brand awareness and sell more.</p>
+                <p className=" md:text-[1.6rem] md:max-w-[800px] xs:text-[1.2rem] font-clashDisplay font-light tracking-wide">Guiding startups and business owners to weave compelling stories through flawless Web Design and Development, boosting brand presence and driving sales with heart and soul.</p>
                 <Magnetic>
                 <button className=" border border-[#eeeeee] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem]  tracking-wide md:w-[350px]">Drop me a line</button>
                 </Magnetic>
                 {/* <p className=" md:text-[2rem] xs:text-[1.2rem] font-light font-clashDisplay tracking-widest">For Creative Brands</p> */}
               </div>
             </div>
-            <div className="md:col-span-2 md:pt-36 flex justify-end ">
-              <small>specialized in Web Design, UX / UI, Webflow, and Front End Development.</small>
+            <div className="md:col-span-2 md:pt-36 flex justify-end xs:mt-8">
+              <small className=" text-white opacity-50">Proficient in crafting stunning Web Design, elevating User Experience, mastering coding, and excelling in Front End Development.</small>
             </div>
           
         </section>
@@ -169,10 +169,10 @@ export default function Home() {
             </div>
             <div className="grid max-w-[1500px] m-auto md:px-20 xs:px-4 ">
               
-              <p className=" font-clashDisplay font-light md:text-[1.8rem] xs:text-[1.2rem] py-10  col-span-3 tracking-wide " ref={myText} >Hey there,  I&apos;m Peace David  a passionate front-end developer capable of fullstack (nodejs/expessjs,nextjs) with 3 years of experience, coupled with a strong affinity for design. I specialize in crafting innovative digital experiences, products, solutions, and crafting compeling narratives. My love for creativity sets me apart, driving me to constantly seek new approaches and push boundaries. </p>
+              <p className=" font-clashDisplay font-light md:text-[1.6rem] xs:text-[1.2rem] py-10  col-span-3 tracking-wide " ref={myText} >Hi, I&apos;m Peace David, a dedicated front-end developer with 3 years of experience in full-stack development (Node.js/Express.js/Next.js), complemented by a keen eye for design and robust marketing skills. I thrive on crafting cutting-edge digital experiences, products, and solutions, while also weaving compelling narratives that captivate audiences. My passion for creativity fuels my drive to explore new approaches and push boundaries in everything I do. </p>
             </div>
         </section>
-        <section className=" md:px-20 xs:px-4  pb-[16rem]  max-w-[1500px] m-auto ">
+        <section className=" md:px-20 xs:px-4  pb-[16rem]  max-w-[1500px] m-auto py-20 ">
           <h1 className=" font-Archivo md:text-5xl font-light pb-14">Here is how I can help you...</h1>
           <div className="flex flex-wrap justify-between gap-4">
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
@@ -182,7 +182,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-[300px] h-[300px] border-l border-[#eeeeee00] grid grid-rows-2">
-              <h1 className=" font-Archivo font-bold text-2xl flex items-end">WEB DEVELOPMENT</h1>
+              <h1 className=" font-Archivo font-bold text-2xl flex items-end">WEB DESIGN</h1>
 
               <div className=" flex items-end">
               <p className=" font-light font-clashDisplay ">I specialize in building custom web applications from scratch using JavaScript frameworks like ReactJS</p>
@@ -243,7 +243,7 @@ export default function Home() {
                 </div>
                 <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
+               
                 </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
@@ -272,7 +272,6 @@ export default function Home() {
                 </div>
                 <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
                 </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
@@ -301,7 +300,6 @@ export default function Home() {
                 </div>
                 <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
                 </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>
@@ -330,7 +328,6 @@ export default function Home() {
                 </div>
                 <div>
                 <h2 className=" text-[2rem] font-bold leading-[1] pb-1">THE MYSTRY OF CREATIVE</h2>
-                <p className=" font-clashDisplay ">get in the house or you get spankt.... i am the only the one with the most honest thinking </p>
                 </div>
                 <div>
                 <div className=' flex list-none  items-center gap-1'>

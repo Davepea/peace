@@ -5,9 +5,11 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react';
 import { useGSAP } from "@gsap/react";
 
+
+
 import { gsap } from "gsap";
 
-import { FaXTwitter,FaInstagram, FaLinkedinIn  } from "react-icons/fa6";
+import { FaXTwitter,FaInstagram, FaLinkedinIn,FaMedium  } from "react-icons/fa6";
 
 const Footer = () => {
     const mymar2 = useRef()
@@ -75,19 +77,21 @@ const Footer = () => {
                 <div className=''>
                    
                     <p className=' md:text-[1.5rem] font-thin'>
-                        i am open to full time opportunities, collaboration and even bring your big imagination to life.
-                        Just one step away to connecting with me
-                        
+                    I&apos;m eagerly welcoming full-time opportunities, collaborative ventures, and the chance to turn your boldest ideas into reality. Just one click away from sparking a connection with me!
                     </p>
                 </div>
                 <div className=''>
                     <div className='pt-14'>
-                        <button className='border border-[#EEE] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem] tracking-wide md:w-[350px]'>Send me an EMAIL</button>
+                      <Link href='https://dev.peacedave@gmail.com'>
+                      <button className='border border-[#EEE] px-10 py-4 rounded-full font-clashDisplay text-[1.5rem] tracking-wide md:w-[350px] mb-7'>Send me an EMAIL</button>
+                      </Link>
+                        <Link href='dev.peacedave@gmail.com'>
                         <div className='md:hidden xs:block'>
                             <div>DEV.PEACEDAVE@GMAIL.COM
                                 
                             </div>
                         </div>
+                        </Link>
                     </div>
                 
                 </div>
@@ -100,18 +104,47 @@ const Footer = () => {
                 <small>contact</small>
 
             </div>
-            <div className=' md:col-span-3'>
-                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2">
-                    <span>+234 810 299 6646</span>
-                    <span>@ dev.peacedave@gmail.com</span>
+            <div className=' md:col-span-3 font-satoshi'>
+                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2 gap-3">
+                    <span>+234 (0) 810 299 6646</span>
+                    {/* https://medium.com/@dev.peacedave */}
+                    {/* https://www.linkedin.com/in/web-developer-0b1121235/ */}
+                    {/* https://www.tiktok.com/@__peacedavid?_t=8llySkunmw2&_r=1 */}
+                    {/*  */}
+                    {/* */}
+                    <Link href="https://www.instagram.com/__peacedavid">
+                      <div className='flex items-center gap-2'>
+                        <div className=''><FaInstagram /></div>
+                      <span>Follow me on Instagram</span>
+                      
+
+                      </div>
+                    </Link>
                 </li>
-                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2">
-                    <span>+234 810 299 6646</span>
-                    <span>@ dev.peacedave@gmail.com</span>
+                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2  gap-3">
+                    <span>dev.peacedave@gmail.com</span>
+                    <Link href='https://medium.com/@dev.peacedave'>
+                    <div className='flex items-center gap-2'>
+                    <div className=''><FaMedium /></div>
+
+                    <span>Read on Medium</span>
+
+                    </div>
+                    </Link>
                 </li>
-                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2">
-                    <span>+234 810 299 6646</span>
-                    <span>@ dev.peacedave@gmail.com</span>
+                <li className="grid grid-cols-2 md:text-sm xs:text-xs border-b border-[#eeeeee0c] py-2 gap-3">
+                  <Link href='https://www.linkedin.com/in/web-developer-0b1121235/'>
+                  <span>Check me up on linkedin</span>
+
+                  </Link>
+                    <Link href='https://twitter.com/peaceboy0001 '>
+                    <div className='flex items-center gap-2'>
+                    <div className=''><FaXTwitter /></div>
+
+                    <span>Follow me on X</span>
+
+                    </div>
+                    </Link>
                 </li>
             </div>
            

@@ -43,7 +43,7 @@ export default function Index() {
                     <p className={styles.snellenberg}>DAVID</p>
                 </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center md:gap-8">
                 <Magnetic>
                     <div className="flex flex-col relative z-[1]">
                         <a>Work</a>
